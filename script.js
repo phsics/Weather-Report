@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (temperature > 25) {
             body.style.backgroundImage = "url('assets/summer.jpg')";
         } else if (temperature >= 10 && temperature <= 25) {
-            body.style.backgroundImage = "url('assets/normal.jpg')";
+            body.style.backgroundImage = "url('assets/Normal.jpg')";
         } else {
             body.style.backgroundImage = "url('assets/snow.jpg')";
         }
