@@ -40,18 +40,35 @@ document.addEventListener("DOMContentLoaded", () => {
         return data;
     }
     
-    function displayWeatherData(data){
-        // display
-        console.log(data);
-        const {name, main, weather} = data;
+    function displayWeatherData(data) {
+        const { name, main, weather } = data;
         cityNameDisplay.textContent = name;
 
-        // unlock the display 
         weatherInfo.classList.remove("hidden");
         errorMessage.classList.add("hidden");
-        temperatureDisplay.textContent = `Temperature : ${main.temp}`;
+        
+        temperatureDisplay.textContent = `Temperature : ${main.temp}°C`;
         descriptionDisplay.textContent = `Weather : ${weather[0].description}`;
+        
+   
+        const temperature = main.temp;
+        const body = document.body;
+    
+        if (temperature > 25) {
+            body.style.backgroundImage = "url('assets/summer.jpg')";
+        } else if (temperature >= 10 && temperature <= 25) {
+            body.style.backgroundImage = "url('assets/normal.jpg')";
+        } else {
+            body.style.backgroundImage = "url('assets/snow.jpg')";
+        }
+
+        body.style.backgroundSize = "cover";
+        body.style.backgroundPosition = "center";
+        body.style.backgroundRepeat = "no-repeat";
     }
+    
+    
+    
 
     function showError(){
         weatherInfo.classList.add("hidden");
