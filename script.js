@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("RESPONSE", response);
 
         if(!response.ok){
+            document.body.style.backgroundImage = "none";
             throw new Error("City not found");
+
         }
         const data = await response.json();
 
