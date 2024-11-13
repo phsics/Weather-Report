@@ -69,9 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         body.style.backgroundRepeat = "no-repeat";
     }
     
-    
-    
-
     function showError(){
         weatherInfo.classList.add("hidden");
         errorMessage.classList.remove("hidden");
